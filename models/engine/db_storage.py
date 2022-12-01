@@ -94,6 +94,7 @@ class DBStorage:
         self.__session = scoped_session(session)
 
     def close(self):
-        """Close scoped session
+        """
+        It removes the current session from the session registry
         """
         self.__session.remove()

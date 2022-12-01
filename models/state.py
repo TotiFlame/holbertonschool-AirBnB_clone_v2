@@ -20,8 +20,9 @@ class State(BaseModel, Base):
     else:
         @property
         def cities(self):
-            """Getter method for cities
-            Return: list of cities with state_id equal to self.id
+            """
+            It returns a list of City objects that are associated with the current State object
+            :return: A list of City objects
             """
             from models import storage
             from models.city import City
