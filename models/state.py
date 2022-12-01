@@ -21,7 +21,8 @@ class State(BaseModel, Base):
         @property
         def cities(self):
             """
-            It returns a list of City objects that are associated with the current State object
+            It returns a list of City objects that
+                are associated with the current State object
             :return: A list of City objects
             """
             from models import storage
