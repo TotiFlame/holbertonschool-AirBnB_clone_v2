@@ -28,12 +28,12 @@ class State(BaseModel, Base):
             from models import storage
             from models.city import City
             # return list of City objs in __objects
-            cities_dict = storage.all(City)
-            cities_list = []
+            c_dict = storage.all(City)
+            c_list = []
 
             # copy values from dict to list
-            for city in cities_dict.values():
+            for city in c_dict.values():
                 if city.state_id == self.id:
-                    cities_list.append(city)
+                    c_list.append(city)
 
-            return cities_list
+            return c_list
