@@ -9,11 +9,11 @@ app = Flask(__name__)
 
 @app.route("/states_list", strict_slashes=False)
 def statelist():
-    states = storage.all(State)
+    states = storage.all(State).values()
     return render_template('7-states_list.html', states=states)
 
 @app.teardown_appcontext
-def removesql():
+def removesql(exit):
     storage.close()
 
 if __name__ == "__main__":
